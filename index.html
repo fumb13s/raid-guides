@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raid Guides</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-sidebar: #f6f8fa;
+      --bg-content: #ffffff;
+      --text: #1f2328;
+      --text-muted: #656d76;
+      --accent: #0969da;
+      --accent-hover: #0550ae;
+      --link: #0969da;
+      --link-hover: #0550ae;
+      --border: #d0d7de;
+      --code-bg: #f6f8fa;
+      --sidebar-width: 260px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      min-width: var(--sidebar-width);
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border);
+      padding: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .sidebar-header {
+      padding: 0 1.25rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-header h1 {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 0.5rem 1.25rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-list a:hover {
+      background: rgba(9, 105, 218, 0.08);
+      color: var(--text);
+    }
+
+    .nav-list a.active {
+      color: var(--accent);
+      background: rgba(9, 105, 218, 0.12);
+      border-right: 3px solid var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-group-title {
+      padding: 0.75rem 1.25rem 0.35rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Main content */
+    .content {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      max-width: 820px;
+      padding: 2.5rem 3rem;
+    }
+
+    /* Markdown styles */
+    .content h1, .content h2, .content h3, .content h4 {
+      color: #1f2328;
+      margin: 1.5em 0 0.5em;
+      line-height: 1.3;
+    }
+
+    .content h1 { font-size: 1.75rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+    .content h2 { font-size: 1.4rem; }
+    .content h3 { font-size: 1.15rem; }
+
+    .content p { margin: 0.75em 0; }
+
+    .content a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    .content a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    .content strong { color: #1f2328; }
+
+    .content ul, .content ol {
+      margin: 0.75em 0;
+      padding-left: 1.5em;
+    }
+
+    .content li { margin: 0.3em 0; }
+    .content li ul, .content li ol { margin: 0.2em 0; }
+
+    .content code {
+      background: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    .content pre {
+      background: var(--code-bg);
+      padding: 1em;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+
+    .content pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .content blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5em 1em;
+      margin: 1em 0;
+      color: var(--text-muted);
+      background: rgba(9, 105, 218, 0.04);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2em 0;
+    }
+
+    .error {
+      padding: 2rem;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    /* Mobile hamburger */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 20;
+      background: var(--bg-sidebar);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 3.5rem 1.25rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
+
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h1>Raid Guides</h1>
+    </div>
+    <ul class="nav-list" id="navList"></ul>
+  </nav>
+
+  <main class="content" id="content">
+    <p>Loading&hellip;</p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // --- Navigation config ---
+    // Add new guides here. Supports flat items and grouped categories.
+    //   { title: "Page Title", path: "file.md" }
+    //   { title: "Category", children: [ { title: "...", path: "..." }, ... ] }
+    const pages = [
+      { title: "Aptoide Guide", path: "aptoide.md" },
+    ];
+
+    const defaultPage = "aptoide.md";
+
+    // --- Build sidebar ---
+    function buildNav(items, container) {
+      items.forEach(item => {
+        if (item.children) {
+          const groupTitle = document.createElement("li");
+          groupTitle.className = "nav-group-title";
+          groupTitle.textContent = item.title;
+          container.appendChild(groupTitle);
+          buildNav(item.children, container);
+        } else {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = "?page=" + encodeURIComponent(item.path);
+          a.textContent = item.title;
+          a.dataset.page = item.path;
+          a.addEventListener("click", e => {
+            e.preventDefault();
+            history.pushState(null, "", a.href);
+            loadPage(item.path);
+            closeSidebar();
+          });
+          li.appendChild(a);
+          container.appendChild(li);
+        }
+      });
+    }
+
+    function highlightActive(pagePath) {
+      document.querySelectorAll(".nav-list a").forEach(a => {
+        a.classList.toggle("active", a.dataset.page === pagePath);
+      });
+    }
+
+    // --- Load markdown ---
+    async function loadPage(pagePath) {
+      const contentEl = document.getElementById("content");
+      highlightActive(pagePath);
+
+      try {
+        const resp = await fetch(pagePath);
+        if (!resp.ok) throw new Error("Not found");
+        const md = await resp.text();
+        contentEl.innerHTML = marked.parse(md);
+      } catch {
+        contentEl.innerHTML = '<div class="error"><h2>Page not found</h2><p>Could not load <code>' +
+          pagePath.replace(/</g, "&lt;") + '</code></p></div>';
+      }
+    }
+
+    // --- Mobile sidebar ---
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.getElementById("menuToggle");
+
+    menuToggle.addEventListener("click", () => sidebar.classList.toggle("open"));
+
+    function closeSidebar() { sidebar.classList.remove("open"); }
+
+    document.getElementById("content").addEventListener("click", closeSidebar);
+
+    // --- Init ---
+    buildNav(pages, document.getElementById("navList"));
+
+    function currentPage() {
+      return new URLSearchParams(window.location.search).get("page") || defaultPage;
+    }
+
+    window.addEventListener("popstate", () => loadPage(currentPage()));
+    loadPage(currentPage());
+  </script>
+</body>
+</html>
