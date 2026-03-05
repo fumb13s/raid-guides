@@ -6,17 +6,17 @@ Hello and welcome to this boring guide with no pictures. If you read through it 
 First of all, hope you all are spending what you can afford to and all that rot. 
 Second, I'm going to assume that you want to get more bang for your buck. If you don't, plarium executives will surely be extremely happy.
 
-If you want to say thanks, please use my **promo code JUAGUTAR (valid until 2026-03-05)**. Watching my stuff over at [YouTube](https://www.youtube.com/@Vircengitorix/streams) would also be much appreciated! I mostly stream LA. 
+If you want to say thanks, please use my **promo code QYAHMFIY (valid until 2026-04-04)**. Watching my stuff over at [YouTube](https://www.youtube.com/@Vircengitorix/streams) would also be much appreciated! I mostly stream LA. 
 
 **What Do I Get**
 
 A cashback to the aptoide wallet off each purchase. Said cashback you can subsequently spend on more purchases.
 
-How much cashback? 2-20% base (realistically: 6-10%) + 5% extra from a promo code + 5-10% extra on specific days. That adds up quickly!
+How much cashback? 2-20% base (realistically: 6-10%) + up to 5% extra from a promo code + 5-10% extra on specific days. That adds up quickly!
 
 **The Fuck Is Aptoide And Why This Is Not A Scam**
 
-Aptoide is an application store that tries to eat google's market share, so they are doing what they can to attract users. Profit from it while it lasts, ditch aptoide afterwards with no regrets.
+Aptoide is an application store that tries to eat google's market share, so they are doing what they can to attract users. Profit from it while it lasts, ditch aptoide afterwards with no regrets. Right now they are trying to scale back their cashback on raid because we all spend too much but it is still better than known alternatives.
 
 **What Do I Need**
 
@@ -46,7 +46,7 @@ One of:
   - Second most important thing, use a promo code
     - It gives you 5% more cashback
     - It gives the same 5% cashback to the person who you got the promo code from
-    - My code, valid until 2026-03-05, is JUAGUTAR
+    - My code, valid until 2026-04-04, is QYAHMFIY
       - I'll try to update it
 - Uninstall raid if it was installed via google play
 - Install raid via aptoide
