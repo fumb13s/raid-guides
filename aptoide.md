@@ -6,13 +6,13 @@ Hello and welcome to this boring guide with no pictures. If you read through it 
 First of all, hope you all are spending what you can afford to and all that rot. 
 Second, I'm going to assume that you want to get more bang for your buck. If you don't, plarium executives will surely be extremely happy.
 
-If you want to say thanks, please use my **promo code QYAHMFIY (valid until 2026-04-04)**. Watching my stuff over at [YouTube](https://www.youtube.com/@Vircengitorix/streams) would also be much appreciated! I mostly stream LA. 
+If you want to say thanks, watching my stuff over at [YouTube](https://www.youtube.com/@Vircengitorix/streams) would also be much appreciated! I mostly stream Live Arena. 
 
 **What Do I Get**
 
 A cashback to the aptoide wallet off each purchase. Said cashback you can subsequently spend on more purchases.
 
-How much cashback? 2-20% base (realistically: 6-10%) + up to 5% extra from a promo code + 5-10% extra on specific days. That adds up quickly!
+How much cashback? 2-20% base (realistically: 6-10%) + ~~up to 5% extra from a promo code~~ + 5-10% extra on specific days (that get rarer and rarer for raid). That used to add up quickly, but even now that the promo codes are not a thing anymore is the best source of cashback that I know of.
 
 **The Fuck Is Aptoide And Why This Is Not A Scam**
 
@@ -43,11 +43,10 @@ One of:
     - Add your dedicated sacrificial lamb here
     - There are ways to top up the wallet without hooking up a credit card but I never bothered, you'll have to look that up
   - You can ignore the sign in part, who gives a fuck as long as your wallet is backed up
-  - Second most important thing, use a promo code
-    - It gives you 5% more cashback
-    - It gives the same 5% cashback to the person who you got the promo code from
-    - My code, valid until 2026-04-04, is QYAHMFIY
-      - I'll try to update it
+  - ~~Second most important thing, use a promo code~~
+    - ~~It gives you 5% more cashback~~
+    - ~~It gives the same 5% cashback to the person who you got the promo code from~~
+    - Aptoide, being greedy shits, closed the ambassador program for Raid, so no extra bits of cashback. The baseline cashback is still worth the hassle I'd say.    
 - Uninstall raid if it was installed via google play
 - Install raid via aptoide
   - Go to the aptoide [official site](https://en.aptoide.com)
